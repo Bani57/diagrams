@@ -1,0 +1,13 @@
+res1=σ a>4 R
+res2=π b R
+res3=π b,c R
+res4=σ a<3 ∧ c='f' R
+res5=S⨯T
+res6=S∩T
+res7=R ⨝ R.b=S.b S
+res8=res7 ⨝ R.c=T.b T
+res9=T ⨝ T.d>S.d S
+-- res10=σ a>3 ∧ d='f' res7 ???
+res11=γ; max(d)->d ( S )
+res12=γ c; count(a)->a ( res7 )
+res12

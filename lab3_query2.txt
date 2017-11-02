@@ -1,0 +1,17 @@
+res1=π Eats.pizza (σ Person.gender='female' ∧ Person.age>20 (Person ⨝ Eats))
+Amy_Eats=π Serves.pizzeria (σ Eats.name='Amy' ∧ Serves.price<10 (Eats ⨝ Serves))
+Fay_Eats=π Serves.pizzeria (σ Eats.name='Fay' ∧ Serves.price<10 (Eats ⨝ Serves))
+res2=Amy_Eats∪Fay_Eats
+res3=(Amy_Eats∪Fay_Eats)-(Amy_Eats∩Fay_Eats)
+Dominos_Eats_Serves=π Eats.name (σ Serves.pizzeria='Dominos' (Eats ⨝ Serves))
+Dominos_Frequents=π Person.name (σ Frequents.pizzeria='Dominos' (Person ⨝ Frequents))
+res4=Dominos_Eats_Serves - Dominos_Frequents
+r1=π Serves.pizzeria (σ Person.age>30 (Person ⨝ Eats) ⨝ Serves)
+r2=π Serves.pizzeria (σ Person.age<=30 ((Person ⨝ Eats) ⨝ Serves))
+res5=r1-r2
+res6=γ; max(Person.age)-> age ( σ Eats.pizza='mushroom' (Person ⨝ Eats) )
+Frequents_Male=π Frequents.pizzeria (σ Person.gender='male' (Person ⨝ Frequents))
+Frequents_Female=π Frequents.pizzeria (σ Person.gender='female' (Person ⨝ Frequents))
+res7=(Frequents_Male-Frequents_Female)∪(Frequents_Female-Frequents_Male)
+res8=π pizzeria (Serves ⨝ (γ; min(price)->price ( σ pizza='pepperoni' (Serves) )))
+res8
