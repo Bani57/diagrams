@@ -1,0 +1,9 @@
+r1=π pizza (σ age<24 Person⨝Eats)
+r2=π pizza (σ price<=10 Serves)
+res1=r1∪r2
+
+all_pizza=π pizza Serves
+all_pizza_count=γ ; count(pizza)-> pizza (all_pizza)
+num_pizza=γ name; count(pizza)-> pizza (Eats)
+res2=π name (all_pizza_count⨝num_pizza)
+res2
